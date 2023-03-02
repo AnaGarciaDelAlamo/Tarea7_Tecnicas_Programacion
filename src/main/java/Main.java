@@ -17,14 +17,18 @@ public class Main {
                         System.out.println("Adiós");
                         return;
                     case 1:
+                        System.out.println("Ejercicio 1");
                         Ejercicio1 ejercicio1 = new Ejercicio1();
                         System.out.println(ejercicio1.tirarDado());
                         break;
                         case 2:
+                            System.out.println("Ejercicio 2");
                         break;
                     case 3:
+                        System.out.println("Ejercicio 3");
                         break;
                     case 4:
+                        System.out.println("Ejercicio 4");
                         break;
 
                 }
