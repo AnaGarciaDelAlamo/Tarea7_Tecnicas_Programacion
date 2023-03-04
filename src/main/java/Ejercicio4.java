@@ -128,6 +128,35 @@ public class Ejercicio4 {
         Scanner sc = new Scanner(System.in);
         Ejercicio4 juego = new Ejercicio4();
         System.out.println("Bienvenido a la última versión de microguerra de barcos");
-
+        System.out.println("Introduce la fila donde quieres colocar el barco:");
+        System.out.println("(0-9)");
+        int fila = sc.nextInt();
+        System.out.println("Introduce la columna donde quieres colocar el barco:");
+        System.out.println("(0-9)");
+        int columna = sc.nextInt();
+        juego.depositarBarcoUsuario(fila, columna);
+        juego.depositarBarcoMAquina();
+        while (true){
+            juego.visualizacionUsuario();
+            juego.visualizacionOrdenador();
+            System.out.println("Introduce la fila donde quieres disparar:");
+            System.out.println("(0-9)");
+            fila = sc.nextInt();
+            System.out.println("Introduce la columna donde quieres disparar:");
+            System.out.println("(0-9)");
+            columna = sc.nextInt();
+            boolean hundido = juego.dispararUsuario(fila, columna);
+            if (hundido){
+                System.out.println("Has hundido el barco");
+                break;
+            }
+            System.out.println("Ahora le toca al ordenador");
+            hundido = juego.dispararMaquina();
+            if (hundido){
+                System.out.println("El ordenador ha hundido tu barco");
+                break;
+            }
+        }
+        sc.close();
     }
 }
